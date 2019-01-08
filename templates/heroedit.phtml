@@ -1,0 +1,45 @@
+<?php $title = 'Edit: ' . $hero->getName() ?>
+<?php $itemAll = '../' ?>
+<?php $itemAddNew = '../new' ?>
+<?php $itemSearch = '../search' ?>
+<?php $style = '../css/style.css' ?>
+<?php include('layouts/head.php') ?>
+<body>
+<?php include('layouts/navbar.php') ?>
+
+<div class="container top-space">
+    <center>
+        <p class="heada">Edit: <?= $hero->getName() ?></p>
+        <form class="pure-form" method="post" action="/edit/<?= $hero->getId() ?>">
+            <label for="hero_name">
+                ID
+            </label>
+            <input value="<?= $hero->getId() ?>" class="top-space" name="hero_id" id="hero_id" type="text" disabled/><br/>
+
+            <label for="hero_name">
+                Name
+            </label>
+            <input placeholder="<?= $hero->getName() ?>" class="top-space" name="hero_name" id="hero_name" type="text"/><br/>
+
+            <label for="hero_role">
+                Role
+            </label>
+            <input placeholder="<?= $hero->getRole() ?>" class="top-space" name="hero_role" id="hero_role" type="text"><br/>
+
+            <label for="hero_abilities">
+                Abilities
+            </label>
+            <input placeholder="<?= $hero->getAbilities() ?>" class="top-space" name="hero_abilities" id="hero_abilities" type="number"><br/>
+
+            <label for="hero_difficulty">
+                Difficulty
+            </label>
+            <input placeholder="<?= $hero->getDifficulty() ?>" class="top-space" name="hero_difficulty" id="hero_difficulty" type="text"><br/>
+
+            <input type="submit" class="pure-button" value="Edit"/>
+        </form>
+    </center>
+</div>
+
+</body>
+</html>

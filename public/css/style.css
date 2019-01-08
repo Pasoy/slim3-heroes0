@@ -1,0 +1,23 @@
+.heada {
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.sub-heada {
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.top-space {
+    margin-bottom: 10px;
+}
+
+.text-detail {
+    font-size: 25px;
+    margin: 0;
+}

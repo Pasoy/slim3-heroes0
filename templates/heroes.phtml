@@ -1,0 +1,63 @@
+<?php $title = 'Heroes' ?>
+<?php $itemAll = '/' ?>
+<?php $itemAddNew = '/new' ?>
+<?php $itemSearch = '/search' ?>
+<?php $style = 'css/style.css' ?>
+<?php $script = 'js/scripto.js' ?>
+<?php include('layouts/head.php') ?>
+<body>
+<?php include('layouts/navbar.php') ?>
+
+<div class="container">
+    <?php if (count($heroes) > 0): ?>
+        <p class="heada">
+            Heroes: <?= count($heroes) ?>
+        </p>
+    <?php else: ?>
+        <p class="heada">
+            No current heroes
+        </p>
+    <?php endif; ?>
+    <p class="sub-heada">
+        Sort by clicking on table header
+    </p>
+    <?php if (count($heroes) > 0): ?>
+        <table id="hero-table" class="table table-bordered table-hover table-striped">
+            <tr>
+                <th onclick="sortTable(0)">ID</th>
+                <th onclick="sortTable(1)">Name</th>
+                <th onclick="sortTable(2)">Role</th>
+                <th onclick="sortTable(3)">Abilities</th>
+                <th onclick="sortTable(4)">Difficulty</th>
+                <th>Actions</th>
+            </tr>
+            <?php foreach ($heroes as $hero): ?>
+
+                <tr>
+                    <td><?= $hero->getId() ?></td>
+                    <td><?= $hero->getName() ?></td>
+                    <td><?= $hero->getRole() ?></td>
+                    <td><?= $hero->getAbilities() ?></td>
+                    <td><?= $hero->getDifficulty() ?></td>
+                    <td>
+                        <a href="<?= $router->pathFor('hero-detail', ['hero_id' => $hero->getId()]) ?>">
+                            view
+                        </a>
+                        <span> | </span>
+                        <a href="<?= $router->pathFor('hero-delete', ['hero_id' => $hero->getId()]) ?>">
+                            remove
+                        </a>
+                        <span> | </span>
+                        <a href="<?= $router->pathFor('hero-edit', ['hero_id' => $hero->getId()]) ?>">
+                            edit
+                        </a>
+                    </td>
+                </tr>
+
+            <?php endforeach; ?>
+        </table>
+    <?php endif; ?>
+</div>
+
+</body>
+</html>

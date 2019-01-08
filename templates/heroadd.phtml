@@ -1,0 +1,41 @@
+<?php $title = 'Add Hero' ?>
+<?php $itemAll = '../' ?>
+<?php $itemAddNew = '../new' ?>
+<?php $itemSearch = '../search' ?>
+<?php $style = 'css/style.css' ?>
+<?php include('layouts/head.php') ?>
+
+<body>
+<?php include "layouts/navbar.php" ?>
+
+<div class="container top-space">
+    <center>
+        <p class="heada">New Hero</p>
+        <form class="pure-form" method="post" action="/new">
+            <label for="hero_name">
+                Name
+            </label>
+            <input class="top-space" name="hero_name" id="hero_name" type="text"/><br/>
+
+            <label for="hero_role">
+                Role
+            </label>
+            <input class="top-space" name="hero_role" id="hero_role" type="text"><br/>
+
+            <label for="hero_abilities">
+                Abilities
+            </label>
+            <input class="top-space" name="hero_abilities" id="hero_abilities" type="number"><br/>
+
+            <label for="hero_difficulty">
+                Difficulty
+            </label>
+            <input class="top-space" name="hero_difficulty" id="hero_difficulty" type="text"><br/>
+
+            <input type="submit" class="pure-button" value="Create"/>
+        </form>
+    </center>
+</div>
+
+</body>
+</html>
